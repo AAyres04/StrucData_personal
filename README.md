@@ -1,0 +1,1 @@
+# StrucData_personal
