@@ -11,22 +11,22 @@ package modelo;
  */
 public class Aeropuerto {
     
-    private String airportID;
+    private int airportID;
     private String nombre;
     private String ciudad;
     private String pais;
     private String IATA;
     private String ICAO;
-    private String latitud;
-    private String longitud;
-    private String altitud;
+    private double latitud;
+    private double longitud;
+    private double altitud;
     private String zonaHoraria;
     private String DST; //Dayligth savings time.
     private String zonaHorariaTZ;
     private String tipoAeropuerto;
     private String source;
 
-    public Aeropuerto(String airportID, String nombre, String ciudad, String pais, String IATA, String ICAO, String latitud, String longitud, String altitud, String zonaHoraria, String DST, String zonaHorariaTZ, String tipoAeropuerto, String source) {
+    public Aeropuerto(int airportID, String nombre, String ciudad, String pais, String IATA, String ICAO, double latitud, double longitud, double altitud, String zonaHoraria, String DST, String zonaHorariaTZ, String tipoAeropuerto, String source) {
         this.airportID = airportID;
         this.nombre = nombre;
         this.ciudad = ciudad;
@@ -42,29 +42,16 @@ public class Aeropuerto {
         this.tipoAeropuerto = tipoAeropuerto;
         this.source = source;
     }
+    
+    /*public Aeropuerto(){
+        
+    }*/
 
-    public Aeropuerto() {
-        this.airportID = "";
-        this.nombre = "";
-        this.ciudad = "";
-        this.pais = "";
-        this.IATA = "";
-        this.ICAO = "";
-        this.latitud = "";
-        this.longitud = "";
-        this.altitud = "";
-        this.zonaHoraria = "";
-        this.DST = "";
-        this.zonaHorariaTZ = "";
-        this.tipoAeropuerto = "";
-        this.source = "";
-    }
-
-    public String getAirportID() {
+    public int getAirportID() {
         return airportID;
     }
 
-    public void setAirportID(String airportID) {
+    public void setAirportID(int airportID) {
         this.airportID = airportID;
     }
 
@@ -108,27 +95,27 @@ public class Aeropuerto {
         this.ICAO = ICAO;
     }
 
-    public String getLatitud() {
+    public double getLatitud() {
         return latitud;
     }
 
-    public void setLatitud(String latitud) {
+    public void setLatitud(double latitud) {
         this.latitud = latitud;
     }
 
-    public String getLongitud() {
+    public double getLongitud() {
         return longitud;
     }
 
-    public void setLongitud(String longitud) {
+    public void setLongitud(double longitud) {
         this.longitud = longitud;
     }
 
-    public String getAltitud() {
+    public double getAltitud() {
         return altitud;
     }
 
-    public void setAltitud(String altitud) {
+    public void setAltitud(double altitud) {
         this.altitud = altitud;
     }
 
@@ -171,6 +158,15 @@ public class Aeropuerto {
     public void setSource(String source) {
         this.source = source;
     }
+    
+    
+    @Override
+    public String toString(){
+        return this.airportID + "\t" + this.nombre + "\t" + this.ciudad + "\t" + this.pais +"\t" + this.IATA + "\t" + this.ICAO + "\t" + this.latitud + "\t" + this.longitud + "\t" + this.altitud + "\t" + this.zonaHoraria + "\t" + this.DST + "\t" + this.zonaHorariaTZ + "\t" + this.tipoAeropuerto + "\t" + this.source;
+    }
+    
+
+    
     
     
     

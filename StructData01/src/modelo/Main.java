@@ -5,6 +5,10 @@
  */
 package modelo;
 
+import datos.AeropuertoData;
+import datos.LecturaCSV;
+import java.util.ArrayList;
+
 /**
  *
  * @author souriez
@@ -16,6 +20,12 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        AeropuertoData aero = new AeropuertoData();
+        ArrayList<Aeropuerto> lista = aero.construirAeropuertos();
+        for(int i = 0; i<lista.size(); i++){
+            System.out.println(lista.get(i));
+        }
+            
     }
     
 }
