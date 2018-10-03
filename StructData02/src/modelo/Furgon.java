@@ -9,7 +9,7 @@ package modelo;
  *
  * @author zeiruos
  */
-public class Furgon {
+public class Furgon implements Comparable<Furgon>{
     private String patente;
     private int chasis;
     private int ejes;
@@ -124,6 +124,13 @@ public class Furgon {
     public String toString(){
         return this.patente + "\t" + this.marca;
         
+    }
+
+    
+
+    @Override
+    public int compareTo(Furgon otroFurgon) {
+        return this.patente.compareTo(otroFurgon.getPatente());
     }
     
     

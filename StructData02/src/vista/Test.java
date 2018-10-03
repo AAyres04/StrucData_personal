@@ -8,6 +8,8 @@ package vista;
 import datos.FurgonData;
 import java.util.ArrayList;
 import modelo.Furgon;
+import modelo.Search;
+import modelo.Sort;
 
 /**
  *
@@ -26,7 +28,16 @@ public class Test {
         
         /*furgones.forEach((furgon) -> {
             System.out.println(furgon);
-        });*/
+        });*/ 
+        
+        Sort sort = new Sort();
+        
+        
+        Search search = new Search();
+        
+        ArrayList<Furgon> furgonesOrdenados = sort.mergeSort(furgones);
+        
+        if(search.binarySearch(furgonesOrdenados, "OBI1165")) System.out.println("Se encontro la patente");;
         
     }
     

@@ -26,8 +26,7 @@ public class FurgonData {
         
         List<String[]> allData = lectura.getAllData();
         
-        System.out.println("aqui estoy");
-        for(int i = 0; i<allData.size(); i++){
+        for(int i = 0; i<20000; i++){
             String patente = allData.get(i)[0];
             int chasis = checkNullInt(allData.get(i)[1]);
             int ejes = checkNullInt(allData.get(i)[2]);
@@ -39,7 +38,7 @@ public class FurgonData {
             String problema_date = allData.get(i)[8];
             int nProblemas = checkNullInt(allData.get(i)[9]);
             furgones.add(new Furgon(patente, chasis, ejes, marca, actualKM, matencionKM, compra_date, mantencion_date, problema_date, nProblemas));
-            if(i == 10000) System.out.println("estoy en 100");
+            if(i == 60000) System.out.println("estoy en " + i);
         }
         return furgones;
     }
