@@ -3,8 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/souriez/NetBeansProjects/StructData01/src/structdata01/Main.java</file>
-            <file>file:/home/souriez/NetBeansProjects/StructData01/src/datos/LecturaCSV.java</file>
+            <file>file:/home/zeiruos/StrucData_personal/StructData01/src/datos/AeropuertoData.java</file>
+            <file>file:/home/zeiruos/StrucData_personal/StructData01/src/modelo/Main.java</file>
+            <file>file:/home/zeiruos/StrucData_personal/StructData01/src/modelo/SelectionSort.java</file>
+            <file>file:/home/zeiruos/StrucData_personal/StructData01/src/datos/LecturaCSV.java</file>
+            <file>file:/home/zeiruos/StrucData_personal/StructData01/src/modelo/Aeropuerto.java</file>
         </group>
     </open-files>
 </project-private>

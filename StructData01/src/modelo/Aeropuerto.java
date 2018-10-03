@@ -9,7 +9,7 @@ package modelo;
  *
  * @author souriez
  */
-public class Aeropuerto {
+public class Aeropuerto implements Comparable<Aeropuerto>{
     
     private int airportID;
     private String nombre;
@@ -165,7 +165,10 @@ public class Aeropuerto {
         return this.airportID + "\t" + this.nombre + "\t" + this.ciudad + "\t" + this.pais +"\t" + this.IATA + "\t" + this.ICAO + "\t" + this.latitud + "\t" + this.longitud + "\t" + this.altitud + "\t" + this.zonaHoraria + "\t" + this.DST + "\t" + this.zonaHorariaTZ + "\t" + this.tipoAeropuerto + "\t" + this.source;
     }
     
-
+    @Override
+    public int compareTo(Aeropuerto aeropuertoComparable) {
+        return this.nombre.compareToIgnoreCase(aeropuertoComparable.getNombre());
+    }
     
     
     

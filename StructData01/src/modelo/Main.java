@@ -22,8 +22,14 @@ public class Main {
         // TODO code application logic here
         AeropuertoData aero = new AeropuertoData();
         ArrayList<Aeropuerto> lista = aero.construirAeropuertos();
-        for(int i = 0; i<lista.size(); i++){
+        /*for(int i = 0; i<lista.size(); i++){
             System.out.println(lista.get(i));
+        }*/
+        
+        Sort sort = new Sort();
+        ArrayList<Aeropuerto> listaOrdenada = sort.selectionSort(lista);
+        for(int i = 0; i<listaOrdenada.size(); i++){
+            System.out.println(listaOrdenada.get(i));
         }
             
     }
