@@ -25,9 +25,10 @@ public class Test {
         AeropuertoData aero = new AeropuertoData();
         ArrayList<Aeropuerto> lista = aero.construirAeropuertos();
         
-        /*for(int i = 0; i<lista.size(); i++){
+        for(int i = 0; i<lista.size(); i++){
             System.out.println(lista.get(i));
-        }*/
+        }
+        System.out.println("\n");
         
         Sort sort = new Sort();
         ArrayList<Aeropuerto> listaOrdenada;
@@ -37,16 +38,16 @@ public class Test {
         
         for(int i = 0; i<listaOrdenada.size(); i++){
             System.out.println(listaOrdenada.get(i));
-        }
+        }*/
         
         
         listaOrdenada = sort.insertionSort(lista);
         
         for(int i = 0; i<listaOrdenada.size(); i++){
             System.out.println(listaOrdenada.get(i));
-        }*/
+        }
         
-        listaOrdenada = sort.mergeSort(lista);
+        //listaOrdenada = sort.mergeSort(lista);
         
         Aeropuerto air = new Aeropuerto();
         air.setNombre("Hopetoun Airport");

@@ -26,7 +26,7 @@ public class FurgonData {
         
         List<String[]> allData = lectura.getAllData();
         
-        for(int i = 0; i<20000; i++){
+        for(int i = 0; i<allData.size(); i++){
             String patente = allData.get(i)[0];
             int chasis = checkNullInt(allData.get(i)[1]);
             int ejes = checkNullInt(allData.get(i)[2]);
