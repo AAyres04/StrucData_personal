@@ -43,9 +43,9 @@ public class Aeropuerto implements Comparable<Aeropuerto>{
         this.source = source;
     }
     
-    /*public Aeropuerto(){
+    public Aeropuerto(){
         
-    }*/
+    }
 
     public int getAirportID() {
         return airportID;
@@ -167,7 +167,7 @@ public class Aeropuerto implements Comparable<Aeropuerto>{
     
     @Override
     public int compareTo(Aeropuerto aeropuertoComparable) {
-        return this.nombre.compareToIgnoreCase(aeropuertoComparable.getNombre());
+        return this.nombre.compareTo(aeropuertoComparable.getNombre());
     }
     
     
