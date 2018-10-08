@@ -68,8 +68,217 @@ public abstract class Documento {
 	protected int contarSilabas(String palabra){
 		// TAREA: Implemente este método para que pueda ser llamado desde
 		// el método obtenerNumSilabas en DocumentoBasico.java. 
-	    return 0;
+                
+                int numSilabas = 0;
+                int indiceChar = 0;
+                char[] caracteres = palabra.toCharArray();
+                for(int i = 0; i<caracteres.length; i++){
+                    System.out.print(caracteres[i]);
+                    if(i !=  caracteres.length-1){
+                        if(caracteres[i] == 'a'||caracteres[i] == 'e'||caracteres[i] == 'o'){
+                            //Hiato N1: aeoáéó + aeoáéó
+                            if(i+1<caracteres.length){
+                                if(caracteres[i+1]=='h'&&i+2<caracteres.length){
+                                    if(caracteres[i+2] == 'a'||caracteres[i+2] == 'e'||caracteres[i+2] == 'o'){
+                                        numSilabas++;
+                                        System.out.println("");
+                                    }else if(caracteres[i+2]=='í'||caracteres[i+2]=='ú'){
+                                        numSilabas++;
+                                        System.out.println("");
+                                    }
+                                }else if(caracteres[i+1] == 'a'||caracteres[i+1] == 'e'||caracteres[i+1] == 'o'){
+                                    numSilabas++;
+                                    System.out.println("");
+                                }else if(caracteres[i+1]=='í'||caracteres[i+1]=='ú'){
+                                    numSilabas++;
+                                    System.out.println("");
+                                }else if(caracteres[i+1]!='a'||caracteres[i+1]!='á'||caracteres[i+1]!='e'||caracteres[i+1]!='é'||caracteres[i+1]!='i'||caracteres[i+1]!='o'||caracteres[i+1]!='ó'||caracteres[i+1]!='u'||caracteres[i+1]!='ú'||caracteres[i+1]!='y'){
+                                    if(i+2<caracteres.length){
+                                        if(caracteres[i+2]!='a'||caracteres[i+2]!='á'||caracteres[i+2]!='e'||caracteres[i+2]!='é'||caracteres[i+2]!='i'||caracteres[i+2]!='o'||caracteres[i+2]!='ó'||caracteres[i+2]!='u'||caracteres[i+2]!='ú'||caracteres[i+2]!='y'){
+                                            numSilabas++;
+                                            System.out.println("");
+                                        
+                                        }else if(caracteres[i+2]=='a'||caracteres[i+2]=='á'||caracteres[i+2]=='e'||caracteres[i+2]=='é'||caracteres[i+2]=='i'||caracteres[i+2]=='o'||caracteres[i+2]=='ó'||caracteres[i+2]=='u'||caracteres[i+2]=='ú'||caracteres[i+2]=='y'){
+                                            numSilabas++;
+                                            System.out.println("");
+                                        
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                            
+                            
+                        }else if(caracteres[i]=='í'||caracteres[i]=='ú'){
+                            if(caracteres[i+1]=='h'&&i+2<caracteres.length){
+                                if(caracteres[i+2]=='a'||caracteres[i+2]=='e'||caracteres[i+2]=='o'){
+                                    numSilabas++;
+                                    System.out.println("");
+                                }
+                            }else if(caracteres[i+1] == 'a'||caracteres[i+1] == 'e'||caracteres[i+1] == 'o'){
+                                numSilabas++;
+                                System.out.println("");
+                            }
+                        
+                        }else if(caracteres[i]=='i'||caracteres[i]=='u'){
+                                
+                            if(i+1<caracteres.length){
+                                if(caracteres[i+1]!='a'||caracteres[i+1]!='á'||caracteres[i+1]!='e'||caracteres[i+1]!='é'||caracteres[i+1]!='i'||caracteres[i+1]!='o'||caracteres[i+1]!='ó'||caracteres[i+1]!='u'||caracteres[i+1]!='ú'||caracteres[i+1]!='y'){
+                                    if(i+2<caracteres.length){
+                                        if(caracteres[i+2]!='a'||caracteres[i+2]!='á'||caracteres[i+2]!='e'||caracteres[i+2]!='é'||caracteres[i+2]!='i'||caracteres[i+2]!='o'||caracteres[i+2]!='ó'||caracteres[i+2]!='u'||caracteres[i+2]!='ú'||caracteres[i+2]!='y'){
+                                            numSilabas++;
+                                            System.out.println("");
+                                            
+                                        }else if(caracteres[i+2]=='a'||caracteres[i+2]=='á'||caracteres[i+2]=='e'||caracteres[i+2]=='é'||caracteres[i+2]=='i'||caracteres[i+2]=='o'||caracteres[i+2]=='ó'||caracteres[i+2]=='u'||caracteres[i+2]=='ú'||caracteres[i+2]=='y'){
+                                            numSilabas++;
+                                            System.out.println("");
+                                            
+                                        }
+                                    }
+                                }else{
+                                    numSilabas++;
+                                }
+                            }
+                        }else if(caracteres[i]!='a'||caracteres[i]!='á'||caracteres[i]!='e'||caracteres[i]!='é'||caracteres[i]!='i'||caracteres[i]!='o'||caracteres[i]!='ó'||caracteres[i]!='u'||caracteres[i]!='ú'||caracteres[i]!='y'){
+                            if(i+1<caracteres.length){
+                            if(caracteres[i+1]!='a'||caracteres[i+1]!='á'||caracteres[i+1]!='e'||caracteres[i+1]!='é'||caracteres[i+1]!='i'||caracteres[i+1]!='o'||caracteres[i+1]!='ó'||caracteres[i+1]!='u'||caracteres[i+1]!='ú'||caracteres[i+1]!='y'){
+                                if(caracteres[i]=='c'&&caracteres[i+1]=='h'){
+                                   //No se cuenta una silaba 
+                                }else if(caracteres[i]=='l'&&caracteres[i+1]=='l'){
+                                    
+                                }else if(caracteres[i]=='r'&&caracteres[i+1]=='r'){
+                                    
+                                }else{
+                                    if(i+2<caracteres.length){
+                                        if(caracteres[i+2]=='l'||caracteres[i+2]=='r'){
+                                            numSilabas++;
+                                            System.out.println("");
+                                            
+                                        }else if(caracteres[i+2]!='a'||caracteres[i+2]!='á'||caracteres[i+2]!='e'||caracteres[i+2]!='é'||caracteres[i+2]!='i'||caracteres[i+2]!='o'||caracteres[i+2]!='ó'||caracteres[i+2]!='u'||caracteres[i+2]!='ú'||caracteres[i+2]!='y'){
+                                            if(i+3<caracteres.length){
+                                                if(caracteres[i+3]!='a'||caracteres[i+3]!='á'||caracteres[i+3]!='e'||caracteres[i+3]!='é'||caracteres[i+3]!='i'||caracteres[i+3]!='o'||caracteres[i+3]!='ó'||caracteres[i+3]!='u'||caracteres[i+3]!='ú'||caracteres[i+3]!='y'){
+                                                    numSilabas++;
+                                                    System.out.println("");
+                                                    
+                                                }else{
+                                                    numSilabas++;
+                                                    System.out.println("");
+                                                    
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            
+                            }else{
+                                numSilabas++;
+                                System.out.println("");
+                            }
+                            }
+                        }
+                        
+                    }
+                    if(indiceChar < caracteres.length){
+                        numSilabas++;
+                        i = indiceChar;
+                    }
+                }
+	    return numSilabas;
 	}
+        
+        protected int contarSilabas2(String palabra){
+            
+            int numSilabas = 0;
+            char[] caracteres = palabra.toCharArray();
+            
+            for(int i=0; i<caracteres.length; i++){
+                System.out.print(caracteres[i]);
+                if(i==caracteres.length-1){
+                    numSilabas++;
+                }
+                
+                if(isVocal(caracteres, i)){
+                    if(i+1<caracteres.length){
+                        if(isDiptongo(caracteres, i)){
+                            
+                        }else if(isHiato(caracteres, i)){
+                            numSilabas++;
+                            System.out.println("");
+                        }else if(!isVocal(caracteres,i+1)){
+                            if(i+2<caracteres.length){
+                                if(isVocal(caracteres,i+2)){
+                                    numSilabas++;
+                                    System.out.println("");
+                                }
+                            }
+                        }else if(i+2<caracteres.length){
+                            if(isDiptongoConH(caracteres, i)){
+                            
+                            }else if(isHiatoConH(caracteres, i)){
+                                numSilabas++;
+                                System.out.println("");
+                            }
+                            
+                        }
+                            
+                    }    
+                }else{
+                    if(i+1<caracteres.length){
+                        if(isVocal(caracteres,i+1)){
+                            
+                        }else if(caracteres[i] == 'c' && caracteres[i+1] == 'c'){
+                            numSilabas++;
+                            System.out.println("");
+                        }else{
+                            if(i+2<caracteres.length){
+                                if(isVocal(caracteres, i+2)){
+                                    System.out.println("");
+                                    numSilabas++;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                
+                
+            }
+            
+            
+            return numSilabas;
+        }
+        
+        private boolean isDiptongo(char[] caracteres, int indice){
+           
+                return (((caracteres[indice]=='i'||caracteres[indice]=='u')&&(caracteres[indice+1]=='i'||caracteres[indice+1]=='u'))
+                        ||((caracteres[indice]=='a'||caracteres[indice]=='á'||caracteres[indice]=='e'||caracteres[indice]=='é'||caracteres[indice]=='o'||caracteres[indice]=='ó')&&(caracteres[indice+1]=='i'||caracteres[indice+1]=='u'))
+                        ||((caracteres[indice]=='i'||caracteres[indice]=='u')&&(caracteres[indice+1]=='a'||caracteres[indice+1]=='á'||caracteres[indice+1]=='e'||caracteres[indice+1]=='é'||caracteres[indice+1]=='o'||caracteres[indice+1]=='ó')));
+                    
+                
+        }
+        
+        private boolean isDiptongoConH(char[] caracteres, int indice){
+            return caracteres[indice+1]=='h'&&(((caracteres[indice]=='i'||caracteres[indice]=='u')&&(caracteres[indice+2]=='i'||caracteres[indice+2]=='u'))
+                        ||((caracteres[indice]=='a'||caracteres[indice]=='á'||caracteres[indice]=='e'||caracteres[indice]=='é'||caracteres[indice]=='o'||caracteres[indice]=='ó')&&(caracteres[indice+2]=='i'||caracteres[indice+2]=='u'))
+                        ||((caracteres[indice]=='i'||caracteres[indice]=='u')&&(caracteres[indice+2]=='a'||caracteres[indice+2]=='á'||caracteres[indice+2]=='e'||caracteres[indice+2]=='é'||caracteres[indice+2]=='o'||caracteres[indice+2]=='ó')));
+        }
+        
+        private boolean isHiato(char[] caracteres, int indice){
+                return (((caracteres[indice]=='a'||caracteres[indice]=='á'||caracteres[indice]=='e'||caracteres[indice]=='é'||caracteres[indice]=='o'||caracteres[indice]=='ó')&&(caracteres[indice+1]=='a'||caracteres[indice+1]=='á'||caracteres[indice+1]=='e'||caracteres[indice+1]=='é'||caracteres[indice+1]=='o'||caracteres[indice+1]=='ó'))
+                        ||((caracteres[indice]=='a'||caracteres[indice]=='á'||caracteres[indice]=='e'||caracteres[indice]=='é'||caracteres[indice]=='o'||caracteres[indice]=='ó')&&(caracteres[indice+1]=='í'||caracteres[indice+1]=='ú'))
+                        ||((caracteres[indice]=='í'||caracteres[indice]=='ú')&&(caracteres[indice+1]=='a'||caracteres[indice+1]=='á'||caracteres[indice+1]=='e'||caracteres[indice+1]=='é'||caracteres[indice+1]=='o'||caracteres[indice+1]=='ó')));
+                   
+                }
+        private boolean isHiatoConH(char[] caracteres, int indice){
+            return caracteres[indice+1]=='h'&&(((caracteres[indice]=='a'||caracteres[indice]=='á'||caracteres[indice]=='e'||caracteres[indice]=='é'||caracteres[indice]=='o'||caracteres[indice]=='ó')&&(caracteres[indice+2]=='a'||caracteres[indice+2]=='á'||caracteres[indice+2]=='e'||caracteres[indice+2]=='é'||caracteres[indice+2]=='o'||caracteres[indice+2]=='ó'))
+                        ||((caracteres[indice]=='a'||caracteres[indice]=='á'||caracteres[indice]=='e'||caracteres[indice]=='é'||caracteres[indice]=='o'||caracteres[indice]=='ó')&&(caracteres[indice+2]=='í'||caracteres[indice+2]=='ú'))
+                        ||((caracteres[indice]=='í'||caracteres[indice]=='ú')&&(caracteres[indice+2]=='a'||caracteres[indice+2]=='á'||caracteres[indice+2]=='e'||caracteres[indice+2]=='é'||caracteres[indice+2]=='o'||caracteres[indice+2]=='ó')));
+        }
+        
+        private boolean isVocal(char[] caracteres, int indice){
+            return ((caracteres[indice]=='a'||caracteres[indice]=='á'||caracteres[indice]=='e'||caracteres[indice]=='é'||caracteres[indice]=='i'||caracteres[indice]=='í'||caracteres[indice]=='o'||caracteres[indice]=='ó'||caracteres[indice]=='u'||caracteres[indice]=='u'||caracteres[indice]=='ú'));
+        }
+            
 	
 	/** Un método para pruebas de caso
 	 * 
@@ -110,8 +319,7 @@ public abstract class Documento {
 			System.out.println("Reprobado.\n");
 		}
 		return aprobado;
-	}
-	
+	}	
 	
 	/** Retorna el número de palabras en este documento */
 	public abstract int obtenerNumPalabras();
