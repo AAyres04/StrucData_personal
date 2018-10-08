@@ -33,7 +33,7 @@ public class DocumentoBasico extends Documento{
 	public int obtenerNumPalabras(){
 		//TAREA: Implementar este método de acuerdo al comentario anterior
 		
-	    return 0;
+	    return obtenerTokens("\\w*[^\\.\\!\\?\\(\\)\\,\\s\\d]").size();
 	}
 	
 	/**
@@ -51,8 +51,7 @@ public class DocumentoBasico extends Documento{
 	 */
 	@Override
 	public int obtenerNumOraciones(){
-	    //TAREA: Implementar este método.
-        return 0;
+	    return obtenerTokens("[^?!.,\\n]*").size()-1;
 	}
 	
 	/**
@@ -75,7 +74,12 @@ public class DocumentoBasico extends Documento{
         // Note que no hay necesidad de usar una expresión regular
 		// para contar sílabas. Se recomienda implementar la función auxiliar 
 		// contarSilabas en Documento.java usando un loop y llamando cada palabra.
-        return 0;
+                String[] textoSplit = obtenerTexto().split("[ .!?]");
+                int counter = 0;
+            for(int i=0; i<textoSplit.length;i++){
+                counter += contarSilabas(textoSplit[i]);
+            }
+        return counter;
 	}
 	
 	/* Método main para probar esta clase.
@@ -98,7 +102,7 @@ public class DocumentoBasico extends Documento{
 		 * 
 	
 		 */
-		pruebasCaso(new DocumentoBasico("Pruebas.  varias???  "
+		/*pruebasCaso(new DocumentoBasico("Pruebas.  varias???  "
 		        + "Oracioooooooones hay varias... son X!  Cierto?"),
 				16, 13, 5);
 		pruebasCaso(new DocumentoBasico(""), 0, 0, 0);
@@ -107,7 +111,8 @@ public class DocumentoBasico extends Documento{
 		pruebasCaso(new DocumentoBasico("muchas?????  oracioooooones son"), 6, 3, 2);
 		
 		pruebasCaso(new DocumentoBasico("dana cide dana es jeje!."),
-		         32, 15, 1);
+		         32, 15, 1);*/
+                pruebasCaso(new DocumentoBasico("Hola Perro"),4,2,1);
 	}
 	
 }

@@ -93,16 +93,20 @@ public class DocumentoBasicoTest {
     
     @Test
     public void testSilaba(){
-        DocumentoBasico silaba = new DocumentoBasico("antonio");
-        System.out.println(silaba.contarSilabas2("niñez"));
-        System.out.println(silaba.contarSilabas2("wajajaja"));
-        System.out.println(silaba.contarSilabas2("escarlata"));
-        System.out.println(silaba.contarSilabas2("construcción"));
-        System.out.println(silaba.contarSilabas2("aéreo"));
-        System.out.println(silaba.contarSilabas2("siames"));
-        System.out.println(silaba.contarSilabas2("miente")); 
-        System.out.println(silaba.contarSilabas2("estrella"));
-        System.out.println(silaba.contarSilabas2("trigonometría"));
+        DocumentoBasico silaba = new DocumentoBasico("hola perro");
+        /*System.out.println(silaba.contarSilabas("niñez"));
+        System.out.println(silaba.contarSilabas("chancaca"));
+        System.out.println(silaba.contarSilabas("escarlata"));
+        System.out.println(silaba.contarSilabas("construcción"));
+        System.out.println(silaba.contarSilabas("aéreo"));
+        System.out.println(silaba.contarSilabas("siames"));
+        System.out.println(silaba.contarSilabas("miente")); 
+        System.out.println(silaba.contarSilabas("estrella"));
+        System.out.println(silaba.contarSilabas("trigonometría"));
+        System.out.println(silaba.contarSilabas("Imaginación"));
+        System.out.println(silaba.contarSilabas("simpático"));*/
+        
+        System.out.println(silaba.obtenerNumSilabas() + " " + silaba.obtenerNumOraciones() + " " + silaba.obtenerNumPalabras() );
     }
     
 }
