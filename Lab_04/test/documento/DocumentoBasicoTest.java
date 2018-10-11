@@ -107,6 +107,7 @@ public class DocumentoBasicoTest {
         System.out.println(silaba.contarSilabas("simpático"));*/
         
         System.out.println(silaba.obtenerNumSilabas() + " " + silaba.obtenerNumOraciones() + " " + silaba.obtenerNumPalabras() );
+        System.out.println(silaba.contarSilabas("buey"));
     }
     
 }
