@@ -46,7 +46,7 @@ public class DocumentoEficiente extends Documento {
 		// LLame a obtenerTokens para preservar cadenas separadas de palabras o puntuación.
 		// Ignorar todo lo que no sea una palabra o puntución final.
 		// ASEGÚRESE DE ENTENDER LA SIGUIENTE LÍNEA DE CÓDIGO ANTES DE SEGUIR
-		List<String> tokens = obtenerTokens("[!?.]+|[a-zA-Z']+");
+		List<String> tokens = obtenerTokens("[!?.]+|[a-zA-Z]+");
                 //this.numOraciones = tokens.size();
                 
                 int auxNumPalabras = 0;
@@ -56,7 +56,7 @@ public class DocumentoEficiente extends Documento {
                 
                 for(int i=0; i<tokens.size(); i++){
                     
-                    
+                    //System.out.println(tokens.get(i));
                     
                     if(esPalabra(tokens.get(i))){
                         auxNumPalabras++;
@@ -148,6 +148,9 @@ public class DocumentoEficiente extends Documento {
 		
 		
 	}
+        
+        
+        
 	
 
 }

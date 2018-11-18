@@ -69,13 +69,12 @@ public abstract class Documento {
 		// TAREA: Implemente este método para que pueda ser llamado desde
 		// el método obtenerNumSilabas en DocumentoBasico.java. 
 		palabra = palabra.toLowerCase();
-                
-                char[] caracteres = palabra.toCharArray();
+
                 int excepcion = 0;
                 
                 String[] silabas = palabra.split("[aeiouy]{1,}");
                 
-                if((caracteres.length-1)>=0&&caracteres[caracteres.length-1]=='e'&&silabas.length!=1){
+                if((palabra.length()-1)>=0&&palabra.endsWith("e")&&silabas.length!=1){
                     excepcion = 1;
                 }
                 
@@ -150,5 +149,12 @@ public abstract class Documento {
 	    
 	}
 	
+        
+        @Override
+        public String toString(){
+            return "Oraciones: " + obtenerNumOraciones() + "\n" +
+                    "Palabras: " + obtenerNumPalabras() + "\n" +
+                    "Silabas: " + obtenerNumSilabas();
+        }
 
 }

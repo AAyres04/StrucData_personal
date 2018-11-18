@@ -45,8 +45,15 @@ public class ComparadorDocumento {
             // los tiempos resultante como se describe en la tarea (como vimos en clases).
             // Las instrucciones y pseudocódigo se encuentra a continuación.
 		
-                
-                
+            /*result = obtenerStringDesdeArchivo(archivoTexto, numComienzo);
+            DocumentoBasico bas = new DocumentoBasico(result);
+            
+            DocumentoEficiente efi = new DocumentoEficiente(result);
+            
+            System.out.println(bas);
+            System.out.println(efi);
+            
+            System.out.println(bas.obtFleschScore() + "\t" + efi.obtFleschScore());*/
                 
             for(int i = 0; i<pruebas; i++){
                 

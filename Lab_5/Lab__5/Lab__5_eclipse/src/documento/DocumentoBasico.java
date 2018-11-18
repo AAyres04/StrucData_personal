@@ -1,5 +1,6 @@
 package documento;
 import documento.DocumentoBasico;
+import java.util.List;
 
 /** 
  * Una implementación simple de la clase abstracta Documento. 
@@ -33,7 +34,7 @@ public class DocumentoBasico extends Documento{
 	public int obtenerNumPalabras(){
 		//TAREA: Implementar este método de acuerdo al comentario anterior
 		
-	    return obtenerTokens("\\w*[^\\.\\!\\?\\(\\)\\,\\s\\d]").size();
+	    return obtenerTokens("\\w*[^\".!?()\\s\\d]").size();
 	}
 	
 	/**
@@ -51,7 +52,7 @@ public class DocumentoBasico extends Documento{
 	 */
 	@Override
 	public int obtenerNumOraciones(){
-	    return obtenerTokens("[^?!.,\\n]*").size()-1;
+	    return obtenerTokens("[?!.]+").size();
 	}
 	
 	/**
@@ -74,10 +75,10 @@ public class DocumentoBasico extends Documento{
         // Note que no hay necesidad de usar una expresión regular
 		// para contar sílabas. Se recomienda implementar la función auxiliar 
 		// contarSilabas en Documento.java usando un loop y llamando cada palabra.
-                String[] textoSplit = obtenerTexto().split("[ .!?]");
+                List<String> textoSplit = obtenerTokens("\\w*[^\".!?()\\s\\d]");
                 int counter = 0;
-                for(int i=0; i<textoSplit.length;i++){
-                    counter += contarSilabas(textoSplit[i]);
+                for(int i=0; i<textoSplit.size();i++){
+                    counter += contarSilabas(textoSplit.get(i));
                 }
                 return counter;
 	}
@@ -104,6 +105,7 @@ public class DocumentoBasico extends Documento{
 		 */
 		pruebasCaso(new DocumentoBasico("Hola de"), 3, 2, 1);
 		pruebasCaso(new DocumentoBasico("Hola Hi hello"), 5, 3, 1);
+                
 
 		
 	}
