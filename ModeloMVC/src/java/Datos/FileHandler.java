@@ -90,6 +90,7 @@ public class FileHandler {
         try {
 
             fichero = new FileWriter(ruta+archivo);
+            
 
             // Escribimos linea a linea en el fichero
             for (String str : strings) {

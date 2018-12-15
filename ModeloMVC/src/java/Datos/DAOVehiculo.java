@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class DAOVehiculo {
     public ArrayList<Vehiculo> loadDataVehiculos(String archivo) throws ParseException{
-        FileHandler f = new FileHandler("/home/souriez/StrucData_personal/ModeloMVC/");
+        FileHandler f = new FileHandler("C:\\Users\\tonio\\Documents\\GitHub\\StrucData_personal\\ModeloMVC\\");
         System.out.println(System.getProperty("user.dir"));
         ArrayList<Vehiculo> vehiculos = new ArrayList<>();
         ArrayList<String> datos = f.lectura(archivo);

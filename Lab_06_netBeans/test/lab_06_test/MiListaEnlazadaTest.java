@@ -41,9 +41,6 @@ public class MiListaEnlazadaTest {
 	    shortList = new MiListaEnlazada<String>();
 		shortList.add("A");
 		shortList.add("B");
-                shortList.add("C");
-                shortList.add("D");
-                shortList.add("F");
 		emptyList = new MiListaEnlazada<Integer>();
 		longerList = new MiListaEnlazada<Integer>();
 		for (int i = 0; i < LONG_LIST_LENGTH; i++)
@@ -64,7 +61,11 @@ public class MiListaEnlazadaTest {
 	 */
 	@Test
 	public void testGet(){
-		// prueba lista vacía, obtener (get) debe lanzar una excepción
+		for(int i = 0; i< shortList.size(); i++){
+                    System.out.println(shortList.get(i));
+                }
+
+// prueba lista vacía, obtener (get) debe lanzar una excepción
 		// el método debería retornar un excepción, sino lo hace, usa fail
 		try {
 			emptyList.get(0);
@@ -79,9 +80,7 @@ public class MiListaEnlazadaTest {
 		assertEquals("Comprueba primero", "A", shortList.get(0));
 		assertEquals("Comprueba segundo", "B", shortList.get(1));
                 
-                for(int i = 0; i< shortList.size(); i++){
-                    System.out.println(shortList.get(i));
-                }
+                
 		
 		try {
 			shortList.get(-1);

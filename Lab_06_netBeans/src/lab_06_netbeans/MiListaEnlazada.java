@@ -31,22 +31,16 @@ public class MiListaEnlazada<E> extends AbstractList<E> {
 	 */
 	public boolean add(E element){
 		// Hacer: Implementar este método
+                LLNode<E> aux;
                 if(element != null){
-                    if(head.data == null){
-                        head.data = element;
+                        aux = new LLNode(element);
+                        aux.prev = tail.prev;
+                        aux.next = tail;
+                        tail.prev.next = aux;
+                        tail.prev = aux;
                         size++;
                         return true;
-                    }else if(tail.data == null){
-                        tail.data = element;
-                        size++;
-                        return true;
-                    }else{
-                        tail.next = new LLNode(element);
-                        tail.next.prev = tail;
-                        tail = tail.next;
-                        size++;
-                        return true;
-                    }
+                    
                     
                 }
 		return false;
@@ -58,10 +52,10 @@ public class MiListaEnlazada<E> extends AbstractList<E> {
 	public E get(int index) {
 		// Hacer: Implementar este método 
 		LLNode<E> aux;
-                aux = head;
+                aux = head.next;
                 
-                for(int i =0; i<size; i++){
-                    if(index==i){
+                for(int i = 0; i<index+1; i++){
+                    if(index==i && index<size){
                         return aux.data;
                     }
                     aux = aux.next;
@@ -79,36 +73,19 @@ public class MiListaEnlazada<E> extends AbstractList<E> {
 		// Hacer: Implementar este método 
                 
                 LLNode<E> aux;
-                aux = head;
+                aux = head.next;
                 
                 LLNode<E> newNode;
                 
                 if(element != null){
-                    for(int i = 0; i<size;i++){
-                        if(head.data == null && i == 0){
-                            head.data = element;
-                            size++;
-                            break;
-                        }else if(tail.data == null && i == 1){
-                            tail.data = element;
-                            size++;
-                            break;
-                        }else if(index==0){
-                            //nuevo head
-                            aux = head.next;
-                            head.next = head;
-
-
-                        }else if(index==i && i<size-1){
+                    for(int i = 0; i<index+1;i++){
+                        if(index==i && i<size-1 && aux != tail){
                             newNode = new LLNode(element);
                             newNode.next = aux;
                             newNode.prev = aux.prev;
                             aux.prev.next = newNode;
                             aux.prev = newNode;
                             size++;
-
-                        }else if(index==i && i==size-1){
-                            //nuevo tail
                         }
 
                         aux = aux.next;
@@ -132,7 +109,18 @@ public class MiListaEnlazada<E> extends AbstractList<E> {
 	 */
 	public E remove(int index){
 		// Hacer: Implementar este método
-		return null;
+		LLNode<E> aux;
+                aux = head.next;
+                
+                for(int i = 0; i< index+1; i++){
+                    if(index==i && aux != tail){
+                        aux.next = aux.prev;
+                        aux.prev = aux.next;
+                        return aux.data;
+                    }
+                    aux = aux.next;
+                }
+                return null;
 	}
 
 	/**
